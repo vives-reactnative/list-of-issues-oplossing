@@ -1,23 +1,26 @@
 # Opdracht JSX: List of issues
 
 ## Opdrachtomschrijving
+
 - Toon een lijst van alle **Open** issues
 - Per open issue wordt het volgende getoond:
   - Id: met daarin het `id` van het issue, zonder de prefix "PI:"
   - Description: met daarin de omschrijving (veld `description` van het issue)
   - Assigned to: met daarin enkel de voornaam (tot aan de eerste spatie) aan wie dit issue is `assigned`. En dit in hoofdletters
   - `----------`
-- Laat de lijst voorafgaan door de tekst: "Open issues"
+- Laat de lijst voorafgaan door de tekst: "Issues met de status: Open"
 
-----------------
+---
 
 ## Maak een nieuw project aan met behulp van expo cli
+
 - Maak in de root, naast dit readme bestand, een nieuw project aan met behulp van de expo cli
 - Configureer ESLint in dit project
 - Open dit project in Visual Studio
 - Exploreer dit project
 
 ## Maak een eerste functional component: List.js
+
 - Maak volgende folderstructuur aan in de root van je project `/src/components`
 - Maak in de folder `/components` een nieuw JavaScript bestand aan: `List.js`
 - Maak hierin een functional component aan:
@@ -48,10 +51,12 @@
   ```
   - Deze array wordt geëxporteerd zodat die in andere JavaScript bestanden kan worden geïmporteerd en gebruikt.
 - Importeer de array `issues` in het nieuwe aangemaakte component `List.js`
+
 ```
 import { issues } from '../../issues';
 ```
-- Pas de tekst 'Hello world' aan naar 'Open issues'
+
+- Pas de tekst 'Hello world' aan naar 'Issues met de status: Open'
 - Plaats een `<View>` component rond het bestaande `<Text>` component
 - Loop over de `issues` array (Gebruik de geziene ES6 features om te loopen over een JavaScript array)
 - Return voor ieder item in de array een stukje JSX, bestaande uit 4 `<Text>` components
@@ -60,7 +65,7 @@ import { issues } from '../../issues';
   - `assigned`, voorafgegaan door de tekst "Gekoppeld aan: "
   - een 10-tal streepjes
 - Voeg een functie toe aan het component, genaamd `extractId()` die uit de meegegeven string parameter de eerste 3 karakters laat vallen. Roep deze functie op in het eerste `<Text>` component en geef het `id` veld hieraan mee.
-Concreet: `extractId("PI:198756541080")` retourneert `"198756541080"`
+  Concreet: `extractId("PI:198756541080")` retourneert `"198756541080"`
 - Zorg er voor dat enkel de issues met status "Open" worden getoond.
 - Voeg nog een functie toe aan je component, genaamd `toUpper()` die uit de meegegeven string parameter het stuk na de eerste spatie laat vallen en alles terug geeft in hoofdletters.
-Concreet: `toUpper("Katerina larson")` retourneer `"KATARINA"`
+  Concreet: `toUpper("Katerina larson")` retourneer `"KATARINA"`

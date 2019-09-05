@@ -8,7 +8,7 @@ const toUpper = text => text.substr(0, text.indexOf(' ')).toUpperCase();
 
 const List = () => (
   <View>
-    <Text>Open issues</Text>
+    <Text>Issues met status: Open</Text>
     {issues.map(e => {
       if (e.status === 'Open') {
         return (
