@@ -1,16 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 import { issues } from '../../issues';
+import Title from '../components/Title';
 
 const extractId = id => `${id.substr(3)}`;
 
 const toUpper = text => text.substr(0, text.indexOf(' ')).toUpperCase();
 
-const List = () => (
+const List = ({ status }) => (
   <View>
-    <Text>Issues met status: Open</Text>
+    <Title>Issues met status: {status}</Title>
     {issues.map(e => {
-      if (e.status === 'Open') {
+      if (e.status === status) {
         return (
           <View>
             <Text>Id: {extractId(e.id)}</Text>
@@ -24,5 +26,12 @@ const List = () => (
     })}
   </View>
 );
+
+List.propTypes = {
+  status: PropTypes.string.isRequired
+};
+List.defaultProps = {
+  status: 'Open'
+};
 
 export default List;
