@@ -5,7 +5,7 @@ import List from './src/components/List';
 export default function App() {
   return (
     <View style={styles.container}>
-      <List />
+      <List status="Open" />
     </View>
   );
 }
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    marginTop: 30
   }
 });
